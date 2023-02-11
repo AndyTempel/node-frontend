@@ -19,5 +19,3 @@ RUN apt-get update && apt-get install -y wget --no-install-recommends \
 WORKDIR /app
 
 RUN npm install puppeteer
-
-COPY ./nginx.conf /nginx.conf
