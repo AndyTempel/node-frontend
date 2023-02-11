@@ -2,7 +2,7 @@ name: 'Image Build Action'
 on:
   push:
     branches:
-      - 'main'
+      - 'master'
       - 'releases/**'
   schedule:
     - cron: '30 12 10 * *'
@@ -29,6 +29,8 @@ jobs:
         with:
           context: .
           push: true
-          tags: [18, latest]
+          tags: |
+            "hidemy/node-frontend:latest"
+            "hidemy/node-frontend:18"
           labels: ${{ steps.meta.outputs.labels }}
   
